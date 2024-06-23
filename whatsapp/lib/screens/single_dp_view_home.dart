@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
+import 'package:whatsapp/themes/color.dart';
 
 class SingleDpViewHome extends StatelessWidget {
   final User user;
@@ -8,7 +9,7 @@ class SingleDpViewHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.tertiary(context),
       appBar: AppBar(
         title: Text(
           user.name,
@@ -20,13 +21,15 @@ class SingleDpViewHome extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
       ),
-      body: Center(
-          child: Image.asset(
-        user.dpPath,
-        height: 400,
-        width: double.infinity,
-        fit: BoxFit.cover,
-      )),
+      body: SizedBox(
+        child: Center(
+            child: Image.asset(
+          user.dpPath,
+          height: 500,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        )),
+      ),
     );
   }
 }

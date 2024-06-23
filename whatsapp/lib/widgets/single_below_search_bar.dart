@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/themes/color.dart';
 
 class SingleBelowSearchBar extends StatefulWidget {
   final VoidCallback onTap;
@@ -19,14 +20,13 @@ class _SingleBelowSearchBarState extends State<SingleBelowSearchBar> {
         margin: const EdgeInsets.all(15),
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         decoration: BoxDecoration(
-          color: Colors.grey.withOpacity(0.1),
+          color: AppColors.tertiary(context),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Text(
           widget.title,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black.withOpacity(0.4),
+          style: const TextStyle(
+            fontWeight: FontWeight.w500,
           ),
         ),
       ),

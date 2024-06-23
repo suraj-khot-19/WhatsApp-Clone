@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/themes/color.dart';
 
 class MessageContainer extends StatefulWidget {
   const MessageContainer({super.key});
@@ -14,11 +15,11 @@ class _MessageContainerState extends State<MessageContainer> {
     return Container(
       width: 320,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.tertiary(context),
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
+            color: Theme.of(context).shadowColor.withOpacity(0.3),
             spreadRadius: 2,
             blurRadius: 5,
           ),
@@ -29,26 +30,25 @@ class _MessageContainerState extends State<MessageContainer> {
       child: Row(
         children: [
           IconButton(
-            icon: const Icon(Icons.emoji_emotions_rounded, color: Colors.grey),
+            icon: const Icon(Icons.emoji_emotions_rounded),
             onPressed: () {},
           ),
           Expanded(
             child: TextField(
-              cursorColor: Colors.green,
+              cursorColor: AppColors.primary(context),
               controller: _message,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "Message",
-                hintStyle: TextStyle(color: Colors.black.withOpacity(0.6)),
                 border: InputBorder.none,
               ),
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.attach_file, color: Colors.grey),
+            icon: const Icon(Icons.attach_file),
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.camera_alt_outlined, color: Colors.grey),
+            icon: const Icon(Icons.camera_alt_outlined),
             onPressed: () {},
           ),
         ],

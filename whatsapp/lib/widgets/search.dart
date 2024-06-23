@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class Search extends StatelessWidget {
@@ -13,21 +14,18 @@ class Search extends StatelessWidget {
         padding: const EdgeInsets.only(left: 23, top: 10, bottom: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: Colors.grey.withOpacity(0.1),
+          color: AppColors.tertiary(context),
         ),
-        child: Row(
+        child: const Row(
           children: [
             Icon(
               Icons.search,
-              color: Colors.black.withOpacity(0.5),
               size: 25,
             ),
-            const AddHorizontalSpace(width: 5),
+            AddHorizontalSpace(width: 5),
             Text(
               "Search...",
-              style: TextStyle(
-                color: Colors.black.withOpacity(0.5),
-              ),
+              style: TextStyle(),
             ),
           ],
         ),

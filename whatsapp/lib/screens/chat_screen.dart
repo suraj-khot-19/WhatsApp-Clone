@@ -1,5 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:whatsapp/model/user.dart';
+import 'package:whatsapp/screens/single_dp_view_home.dart';
+import 'package:whatsapp/themes/color.dart';
+import 'package:whatsapp/themes/theme_provider.dart';
 import 'package:whatsapp/widgets/message_container.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
@@ -15,20 +20,26 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.tertiary(context),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
-          leadingWidth: 10,
+          leadingWidth: 12,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const AddHorizontalSpace(width: 10),
               SizedBox(
-                height: 40,
-                width: 40,
+                height: 50,
+                width: 45,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return SingleDpViewHome(user: widget.user);
+                      },
+                    ));
+                  },
                   child: CircleAvatar(
                     backgroundImage: AssetImage(widget.user.dpPath),
                   ),
@@ -56,39 +67,40 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
-                  "assets/image.png",
+      body: Column(
+        children: [
+          Expanded(
+            child: SizedBox(
+              child: CupertinoSwitch(
+                activeColor: Colors.cyan,
+                value: Provider.of<ThemeProvider>(context, listen: false)
+                    .isDarkTheme,
+                onChanged: (value) {
+                  Provider.of<ThemeProvider>(context, listen: false)
+                      .toggleTheme();
+                },
+              ),
+            ),
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const MessageContainer(),
+              const AddHorizontalSpace(width: 3),
+              Container(
+                height: 70,
+                margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: AppColors.primary(context), shape: BoxShape.circle),
+                child: const Icon(
+                  Icons.mic,
+                  size: 20,
                 ),
-                fit: BoxFit.cover)),
-        child: Column(
-          children: [
-            Expanded(
-              child: Container(),
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const MessageContainer(),
-                Container(
-                  height: 70,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  padding: const EdgeInsets.all(5),
-                  decoration: const BoxDecoration(
-                      color: Colors.green, shape: BoxShape.circle),
-                  child: const Icon(
-                    Icons.mic,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

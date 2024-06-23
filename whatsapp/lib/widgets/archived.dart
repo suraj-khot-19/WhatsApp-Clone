@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class Archived extends StatefulWidget {
@@ -13,36 +14,34 @@ class _ArchivedState extends State<Archived> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
-      child: const Padding(
-        padding: EdgeInsets.only(
+      child: Padding(
+        padding: const EdgeInsets.only(
           left: 22,
           top: 15,
           right: 22,
         ),
         child: Row(
           children: [
-            Icon(
+            const Icon(
               Icons.archive_outlined,
-              size: 30,
-              // color: Colors.grey.withOpacity(0.7),
+              size: 26,
             ),
-            AddHorizontalSpace(
+            const AddHorizontalSpace(
               width: 25,
             ),
-            Text(
+            const Text(
               "Archived",
               style: TextStyle(
                 fontWeight: FontWeight.w500,
-                // color: Colors.grey.withOpacity(0.7),
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Text(
               "2",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.green,
+                color: AppColors.primary(context),
               ),
             ),
           ],

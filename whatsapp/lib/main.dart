@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:whatsapp/screens/bottom_navigation_screen.dart';
+import 'package:whatsapp/themes/theme_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => ThemeProvider(),
+      ),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,11 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'WhatsApp',
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Colors.white),
-        useMaterial3: true,
-        brightness: Brightness.light,
-      ),
+      theme: Provider.of<ThemeProvider>(context).themeData,
       home: const BottomNavigationScreen(),
     );
   }

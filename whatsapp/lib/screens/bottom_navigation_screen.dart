@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/screens/home_screen.dart';
+import 'package:whatsapp/screens/update_screen.dart';
+import 'package:whatsapp/themes/color.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});
@@ -12,7 +14,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   int isSelected = 0;
   final List _items = const <Widget>[
     HomeScreen(),
-    Text("data"),
+    UpdateScreen(),
     Text("data"),
     Text("data"),
   ];
@@ -34,9 +36,9 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        unselectedItemColor: Colors.black,
-        selectedItemColor: Colors.green,
-        backgroundColor: Colors.white,
+        unselectedItemColor: AppColors.secoundry(context),
+        selectedItemColor: AppColors.primary(context),
+        backgroundColor: AppColors.background(context),
         items: const [
           BottomNavigationBarItem(
             label: "Chats",

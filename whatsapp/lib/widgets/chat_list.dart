@@ -3,6 +3,7 @@ import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/model/user_data.dart';
 import 'package:whatsapp/screens/chat_screen.dart';
 import 'package:whatsapp/screens/single_dp_view_home.dart';
+import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class ChatList extends StatefulWidget {
@@ -47,9 +48,9 @@ class _ChatListState extends State<ChatList> {
                       child: Text(
                         user.name,
                         style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.white),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -61,30 +62,30 @@ class _ChatListState extends State<ChatList> {
             actions: [
               IconButton(
                 onPressed: () {},
-                icon: const Icon(
+                icon: Icon(
                   Icons.message,
-                  color: Colors.green,
+                  color: AppColors.primary(context),
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(
+                icon: Icon(
                   Icons.call,
-                  color: Colors.green,
+                  color: AppColors.primary(context),
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(
+                icon: Icon(
                   Icons.video_call_outlined,
-                  color: Colors.green,
+                  color: AppColors.primary(context),
                 ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(
+                icon: Icon(
                   Icons.info,
-                  color: Colors.green,
+                  color: AppColors.primary(context),
                 ),
               ),
             ],
@@ -123,7 +124,7 @@ class _ChatListState extends State<ChatList> {
                     ),
                   ),
                 ),
-                const AddHorizontalSpace(width: 8),
+                const AddHorizontalSpace(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,17 +132,29 @@ class _ChatListState extends State<ChatList> {
                       Text(
                         user.name,
                         style: const TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 18),
+                            fontWeight: FontWeight.w500, fontSize: 18),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      Text(
-                        user.bio,
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.5),
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                      const AddVerticleSpace(height: 3),
+                      Row(
+                        children: [
+                          Icon(Icons.check,
+                              size: 20,
+                              color: user.bio.contains("s")
+                                  ? Colors.blue
+                                  : AppColors.secoundry(
+                                      context,
+                                    )),
+                          Text(
+                            user.bio,
+                            style: TextStyle(
+                              color: AppColors.secoundry(context),
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -151,15 +164,15 @@ class _ChatListState extends State<ChatList> {
                   children: [
                     Text(
                       user.lastSeen,
-                      style: TextStyle(color: Colors.black.withOpacity(0.5)),
+                      style: TextStyle(color: AppColors.secoundry(context)),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 4),
                       height: 20,
                       width: 20,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.green,
+                        color: AppColors.primary(context),
                       ),
                       child: const Center(
                         child: Text(
