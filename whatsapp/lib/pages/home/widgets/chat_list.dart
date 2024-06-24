@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/model/user_data.dart';
-import 'package:whatsapp/screens/chat_screen.dart';
-import 'package:whatsapp/screens/single_dp_view_home.dart';
+import 'package:whatsapp/pages/chat/screens/chat_screen.dart';
 import 'package:whatsapp/themes/color.dart';
+import 'package:whatsapp/widgets/showing_dp.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class ChatList extends StatefulWidget {
-  const ChatList({super.key});
+  const ChatList({
+    super.key,
+  });
 
   @override
   State<ChatList> createState() => _ChatListState();
@@ -15,83 +17,6 @@ class ChatList extends StatefulWidget {
 
 class _ChatListState extends State<ChatList> {
   final UserData userData = UserData();
-
-  //showing dp...
-  void showPhoto(User user) {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            contentPadding: EdgeInsets.zero,
-            content: GestureDetector(
-              onTap: () => Navigator.push(context, MaterialPageRoute(
-                builder: (context) {
-                  return SingleDpViewHome(user: user);
-                },
-              )),
-              child: SizedBox(
-                height: 250,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    //image
-                    Container(
-                      padding: EdgeInsets.zero,
-                      child: Image.asset(
-                        user.dpPath,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    //name
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        user.name,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.message,
-                  color: AppColors.primary(context),
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.call,
-                  color: AppColors.primary(context),
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.video_call_outlined,
-                  color: AppColors.primary(context),
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.info,
-                  color: AppColors.primary(context),
-                ),
-              ),
-            ],
-          );
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +28,7 @@ class _ChatListState extends State<ChatList> {
       itemBuilder: (context, index) {
         User user = userData.user[index];
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 10),
           child: GestureDetector(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
@@ -112,19 +37,22 @@ class _ChatListState extends State<ChatList> {
                 },
               ));
             },
+            // onLongPress: widget.onLongPress,
             child: Row(
               children: [
+                //dp
                 SizedBox(
                   height: 50,
                   width: 50,
                   child: GestureDetector(
-                    onTap: () => showPhoto(user),
+                    onTap: () => ShowingDp().showPhoto(user, context),
                     child: CircleAvatar(
                       backgroundImage: AssetImage(user.dpPath),
                     ),
                   ),
                 ),
                 const AddHorizontalSpace(width: 10),
+                //name bio
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

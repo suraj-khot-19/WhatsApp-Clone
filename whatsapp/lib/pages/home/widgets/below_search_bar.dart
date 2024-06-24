@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/widgets/single_below_search_bar.dart';
+import 'package:whatsapp/pages/home/widgets/single_below_search_bar.dart';
 
 class BelowSearchBar extends StatefulWidget {
   const BelowSearchBar({super.key});

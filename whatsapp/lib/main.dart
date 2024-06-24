@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whatsapp/screens/bottom_navigation_screen.dart';
+import 'package:whatsapp/pages/bottom_navigation_screen.dart';
 import 'package:whatsapp/themes/theme_provider.dart';
 
 void main() {

@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp/model/user.dart';
-import 'package:whatsapp/screens/single_dp_view_home.dart';
+import 'package:whatsapp/pages/single_dp_view_home.dart';
 import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/themes/theme_provider.dart';
-import 'package:whatsapp/widgets/message_container.dart';
+import 'package:whatsapp/pages/chat/widgets/message_container.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class ChatScreen extends StatefulWidget {

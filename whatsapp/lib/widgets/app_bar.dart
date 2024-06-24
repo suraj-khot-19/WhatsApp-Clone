@@ -4,14 +4,16 @@ class MyAppBar extends StatelessWidget {
   final String title;
   final VoidCallback onTapQr;
   final VoidCallback onTapPhoto;
-  final VoidCallback onTapSearch;
+  final VoidCallback? onTapSearch;
+  final bool? isSerach;
 
   const MyAppBar(
       {super.key,
       required this.title,
       required this.onTapQr,
       required this.onTapPhoto,
-      required this.onTapSearch});
+      this.onTapSearch,
+      this.isSerach});
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +29,15 @@ class MyAppBar extends StatelessWidget {
           onPressed: onTapPhoto,
           icon: const Icon(Icons.photo_camera_outlined),
         ),
-        IconButton(
-          onPressed: onTapSearch,
-          icon: const Icon(Icons.search),
-        ),
+        isSerach == null
+            ? IconButton(
+                onPressed: onTapSearch,
+                icon: const Icon(Icons.search),
+              )
+            : SizedBox(
+                height: 0,
+                width: 0,
+              ),
         PopupMenuButton(
           itemBuilder: (context) => [
             const PopupMenuItem(

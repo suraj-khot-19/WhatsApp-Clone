@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/screens/call_screen.dart';
-import 'package:whatsapp/screens/home_screen.dart';
-import 'package:whatsapp/screens/update_screen.dart';
+import 'package:whatsapp/pages/calls/screens/call_screen.dart';
+import 'package:whatsapp/pages/communities/screens/community_screen.dart';
+import 'package:whatsapp/pages/home/screens/home_screen.dart';
+import 'package:whatsapp/pages/updates/screen/update_screen.dart';
 import 'package:whatsapp/themes/color.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   final List _items = const <Widget>[
     HomeScreen(),
     UpdateScreen(),
-    Text("data"),
+    CommunityScreen(),
     CallScreen(),
   ];
 

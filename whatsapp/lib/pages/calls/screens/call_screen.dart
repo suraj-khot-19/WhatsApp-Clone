@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/app_bar.dart';
-import 'package:whatsapp/widgets/call_below_app_bar.dart';
-import 'package:whatsapp/widgets/call_list.dart';
+import 'package:whatsapp/pages/calls/widget/call_below_app_bar.dart';
+import 'package:whatsapp/pages/calls/widget/call_list.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class CallScreen extends StatefulWidget {
@@ -26,17 +26,19 @@ class _CallScreenState extends State<CallScreen> {
           onTapSearch: () {},
         ),
       ),
-      body: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CallBelowAppBar(),
-          AddVerticleSpace(height: 10),
-          Text(
-            "   Recent",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-          ),
-          CallList(),
-        ],
+      body: SingleChildScrollView(
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CallBelowAppBar(),
+            AddVerticleSpace(height: 10),
+            Text(
+              "   Recent",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
+            CallList(),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.primary(context),

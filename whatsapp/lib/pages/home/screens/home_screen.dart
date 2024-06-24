@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/pages/home/widgets/appbar_popup_button.dart';
 import 'package:whatsapp/themes/color.dart';
-import 'package:whatsapp/widgets/archived.dart';
-import 'package:whatsapp/widgets/below_search_bar.dart';
-import 'package:whatsapp/widgets/chat_list.dart';
-import 'package:whatsapp/widgets/search.dart';
+import 'package:whatsapp/pages/home/widgets/archived.dart';
+import 'package:whatsapp/pages/home/widgets/below_search_bar.dart';
+import 'package:whatsapp/pages/home/widgets/chat_list.dart';
+import 'package:whatsapp/pages/home/widgets/search.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,56 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.photo_camera_outlined),
           ),
           //more option
-          PopupMenuButton(
-            color: Colors.white,
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                  onTap: () {},
-                  value: "",
-                  child: const Text(
-                    "New Group",
-                  )),
-              PopupMenuItem(
-                onTap: () {},
-                value: "",
-                child: const Text(
-                  "New Brodcast",
-                ),
-              ),
-              PopupMenuItem(
-                onTap: () {},
-                value: "",
-                child: const Text(
-                  "Linked Devices",
-                ),
-              ),
-              PopupMenuItem(
-                onTap: () {},
-                value: "",
-                child: const Text(
-                  "Starred Messages",
-                ),
-              ),
-              PopupMenuItem(
-                onTap: () {},
-                value: "",
-                child: const Text(
-                  "Payments",
-                ),
-              ),
-              PopupMenuItem(
-                onTap: () {},
-                value: "",
-                child: const Text(
-                  "Settings",
-                ),
-              ),
-            ],
-          ),
+          AppbarPopupButton(),
         ],
       ),
+
       //body
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Search(),
