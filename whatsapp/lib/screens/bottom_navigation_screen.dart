@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/screens/call_screen.dart';
 import 'package:whatsapp/screens/home_screen.dart';
 import 'package:whatsapp/screens/update_screen.dart';
 import 'package:whatsapp/themes/color.dart';
@@ -16,7 +17,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     HomeScreen(),
     UpdateScreen(),
     Text("data"),
-    Text("data"),
+    CallScreen(),
   ];
 
   //chaning index
@@ -36,25 +37,32 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        unselectedItemColor: AppColors.secoundry(context),
-        selectedItemColor: AppColors.primary(context),
+        selectedIconTheme: IconThemeData(color: AppColors.primary(context)),
+        unselectedIconTheme: IconThemeData(color: AppColors.secoundry(context)),
         backgroundColor: AppColors.background(context),
+        selectedFontSize: 13,
+        unselectedFontSize: 13,
+        selectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: AppColors.inversePrimery(context)),
+        unselectedLabelStyle:
+            TextStyle(color: AppColors.inversePrimery(context)),
         items: const [
           BottomNavigationBarItem(
             label: "Chats",
             icon: Icon(Icons.chat),
           ),
           BottomNavigationBarItem(
-            label: "Updated",
+            label: "Updates",
             icon: Icon(Icons.update_disabled_sharp),
           ),
           BottomNavigationBarItem(
             label: "Communities",
-            icon: Icon(Icons.people),
+            icon: Icon(Icons.people_outline),
           ),
           BottomNavigationBarItem(
             label: "Calls",
-            icon: Icon(Icons.phone),
+            icon: Icon(Icons.phone_outlined),
           ),
         ],
       ),

@@ -164,7 +164,11 @@ class _ChatListState extends State<ChatList> {
                   children: [
                     Text(
                       user.lastSeen,
-                      style: TextStyle(color: AppColors.secoundry(context)),
+                      style: TextStyle(
+                          color: user.lastSeen.contains("online")
+                              ? Colors.green
+                              : AppColors.secoundry(context),
+                          fontWeight: FontWeight.w400),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 4),

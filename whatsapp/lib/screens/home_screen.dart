@@ -30,14 +30,17 @@ class _HomeScreenState extends State<HomeScreen> {
               fontSize: 23),
         ),
         actions: [
+          //qr
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.photo_library_sharp),
+            icon: const Icon(Icons.qr_code_scanner),
           ),
+          //photo
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.photo_camera),
+            icon: const Icon(Icons.photo_camera_outlined),
           ),
+          //more option
           PopupMenuButton(
             color: Colors.white,
             itemBuilder: (context) => [

@@ -14,7 +14,7 @@ class StatusListHorizonntal extends StatelessWidget {
       itemCount: user.length,
       itemBuilder: (context, index) {
         return SizedBox(
-          height: 100,
+          height: 110,
           width: 100,
           child: ListTile(
             title: index == 0
@@ -33,7 +33,8 @@ class StatusListHorizonntal extends StatelessWidget {
                         child: Container(
                           height: 24,
                           width: 24,
-                          padding: const EdgeInsets.all(1),
+                          margin: const EdgeInsets.only(
+                              left: 3, right: 0, bottom: 3),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: AppColors.primary(context),
@@ -49,7 +50,12 @@ class StatusListHorizonntal extends StatelessWidget {
                       )
                     ],
                   )
-                : SizedBox(
+                : Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 1.5, color: AppColors.primary(context)),
+                        shape: BoxShape.circle),
+                    padding: const EdgeInsets.all(2.5),
                     height: 60,
                     child: CircleAvatar(
                       backgroundImage: AssetImage(user[index].dpPath),

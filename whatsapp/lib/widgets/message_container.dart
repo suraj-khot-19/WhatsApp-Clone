@@ -30,7 +30,7 @@ class _MessageContainerState extends State<MessageContainer> {
       child: Row(
         children: [
           IconButton(
-            icon: const Icon(Icons.emoji_emotions_rounded),
+            icon: const Icon(Icons.emoji_emotions_outlined),
             onPressed: () {},
           ),
           Expanded(
