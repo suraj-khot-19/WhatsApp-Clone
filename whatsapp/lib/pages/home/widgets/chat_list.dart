@@ -104,7 +104,7 @@ class _ChatListState extends State<ChatList> {
                       width: 20,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: AppColors.primary(context),
+                        color: Colors.green.withOpacity(0.9),
                       ),
                       child: const Center(
                         child: Text(

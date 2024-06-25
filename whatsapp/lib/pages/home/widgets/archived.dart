@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/themes/color.dart';
+import 'package:whatsapp/pages/archived/archived_screen.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class Archived extends StatefulWidget {
@@ -13,7 +13,13 @@ class _ArchivedState extends State<Archived> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ArchivedScreen(),
+            ));
+      },
       child: Padding(
         padding: const EdgeInsets.only(
           left: 22,
@@ -41,7 +47,7 @@ class _ArchivedState extends State<Archived> {
               "2",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: AppColors.primary(context),
+                color: Colors.green.withOpacity(0.9),
               ),
             ),
           ],

@@ -8,12 +8,15 @@ class IconNameRow extends StatefulWidget {
   final String? subTitle;
   final IconData icon;
   final bool? isSwitch;
+  final bool? isSetting;
+
   const IconNameRow(
       {super.key,
       required this.title,
       this.subTitle,
       required this.icon,
-      this.isSwitch});
+      this.isSwitch,
+      this.isSetting});
 
   @override
   State<IconNameRow> createState() => _IconNameRowState();
@@ -65,7 +68,7 @@ class _IconNameRowState extends State<IconNameRow> {
                     });
                   })
               : SizedBox(
-                  width: 65,
+                  width: widget.isSetting == null ? 65 : 0,
                 ),
         ],
       ),

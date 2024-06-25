@@ -45,7 +45,7 @@ class SingleFindChannels extends StatelessWidget {
                   ),
                   child: Icon(
                     Icons.check_circle,
-                    color: AppColors.primary(context),
+                    color: Colors.green.withOpacity(0.9),
                   ),
                 ),
               ),
@@ -64,7 +64,7 @@ class SingleFindChannels extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             decoration: BoxDecoration(
-              color: AppColors.primary(context),
+              color: Colors.green.withOpacity(0.9),
               borderRadius: BorderRadius.circular(22),
             ),
             child: Text(

@@ -41,7 +41,7 @@ class _CallScreenState extends State<CallScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primary(context),
+        backgroundColor: Colors.green.withOpacity(0.9),
         onPressed: () {},
         child: const Icon(Icons.call),
       ),

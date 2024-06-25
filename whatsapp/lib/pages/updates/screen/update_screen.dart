@@ -76,7 +76,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
             ),
           ),
           floatingActionButton: FloatingActionButton(
-            backgroundColor: AppColors.primary(context),
+            backgroundColor: Colors.green.withOpacity(0.9),
             onPressed: () {},
             child: const Icon(Icons.camera_alt_outlined),
           ),

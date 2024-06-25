@@ -83,24 +83,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              const MessageContainer(),
-              const AddHorizontalSpace(width: 3),
-              Container(
-                height: 70,
-                margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: AppColors.primary(context), shape: BoxShape.circle),
-                child: const Icon(
-                  Icons.mic,
-                  size: 20,
-                ),
-              ),
-            ],
-          ),
+          const MessageContainer(),
         ],
       ),
     );

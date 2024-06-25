@@ -14,7 +14,7 @@ class CallBelowAppBar extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: AppColors.primary(context),
+              color: Colors.green.withOpacity(0.9),
               shape: BoxShape.circle,
             ),
             child: Icon(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
+import 'package:whatsapp/widgets/single_dp_view_home.dart';
 
 class ItemsWithStack extends StatelessWidget {
   final User user;
@@ -17,12 +18,19 @@ class ItemsWithStack extends StatelessWidget {
                 icon: Icon(Icons.arrow_back))),
         Align(
           alignment: Alignment.topCenter,
-          child: SizedBox(
-            height: 150,
-            width: 150,
-            child: CircleAvatar(
-              backgroundImage: AssetImage(
-                user.dpPath,
+          child: InkWell(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SingleDpViewHome(user: user),
+                )),
+            child: SizedBox(
+              height: 150,
+              width: 150,
+              child: CircleAvatar(
+                backgroundImage: AssetImage(
+                  user.dpPath,
+                ),
               ),
             ),
           ),
@@ -32,7 +40,15 @@ class ItemsWithStack extends StatelessWidget {
           child: PopupMenuButton(
             itemBuilder: (context) {
               return [
-                PopupMenuItem(child: Text("more")),
+                PopupMenuItem(
+                  child: Text("Share"),
+                  onTap: () {},
+                ),
+                PopupMenuItem(child: Text("Edit"), onTap: () {}),
+                PopupMenuItem(
+                    child: Text("View in address book"), onTap: () {}),
+                PopupMenuItem(
+                    child: Text("Verify security code"), onTap: () {}),
               ];
             },
           ),

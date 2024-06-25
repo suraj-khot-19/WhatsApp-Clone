@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           "WhatsApp",
           style: TextStyle(
-              color: AppColors.primary(context),
+              color: Colors.green.withOpacity(0.9),
               fontWeight: FontWeight.bold,
               fontSize: 23),
         ),
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //floating action
 
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primary(context),
+        backgroundColor: Colors.green.withOpacity(0.9),
         onPressed: () {},
         child: const Icon(
           Icons.chat,

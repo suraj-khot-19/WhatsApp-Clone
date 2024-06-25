@@ -37,7 +37,7 @@ class StatusListHorizonntal extends StatelessWidget {
                               left: 3, right: 0, bottom: 3),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: AppColors.primary(context),
+                            color: Colors.green.withOpacity(0.9),
                           ),
                           child: Center(
                             child: Icon(
@@ -53,7 +53,7 @@ class StatusListHorizonntal extends StatelessWidget {
                 : Container(
                     decoration: BoxDecoration(
                         border: Border.all(
-                            width: 1.5, color: AppColors.primary(context)),
+                            width: 1.5, color: Colors.green.withOpacity(0.9)),
                         shape: BoxShape.circle),
                     padding: const EdgeInsets.all(2.5),
                     height: 60,

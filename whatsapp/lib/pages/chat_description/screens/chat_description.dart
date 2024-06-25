@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/pages/chat_description/widget/buttons.dart';
+import 'package:whatsapp/pages/chat_description/widget/chat_divider.dart';
 import 'package:whatsapp/pages/chat_description/widget/group_comman.dart';
 import 'package:whatsapp/pages/chat_description/widget/icon_name_row.dart';
 import 'package:whatsapp/pages/chat_description/widget/items_with_stack.dart';
@@ -53,7 +54,7 @@ class ChatDescription extends StatelessWidget {
                   //buttons
                   Buttons(),
                   //media
-                  MediaLinks(),
+                  MediaLinks(user: user),
                   //icons and name in row
                   IconNameRow(
                     title: 'Notification',
@@ -63,9 +64,7 @@ class ChatDescription extends StatelessWidget {
                     title: 'Media visiblity',
                     icon: CupertinoIcons.photo,
                   ),
-                  Divider(
-                    color: AppColors.secoundry(context).withOpacity(0.4),
-                  ),
+                  ChatDivider(),
                   IconNameRow(
                     title: 'Encryption',
                     subTitle:
@@ -83,9 +82,7 @@ class ChatDescription extends StatelessWidget {
                     isSwitch: true,
                     subTitle: "Lock and hide this chat on this device",
                   ),
-                  Divider(
-                    color: AppColors.secoundry(context).withOpacity(0.4),
-                  ),
+                  ChatDivider(),
                   GroupComman(
                     user: user,
                   )

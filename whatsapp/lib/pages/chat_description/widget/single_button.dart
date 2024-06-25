@@ -19,14 +19,19 @@ class SingleButton extends StatelessWidget {
         color: AppColors.background(context),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(width: 0.6, color: AppColors.secoundry(context)),
-        boxShadow: [BoxShadow(color: AppColors.tertiary(context))],
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 2,
+            color: Theme.of(context).shadowColor.withOpacity(0.3),
+          )
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
             iconData,
-            color: AppColors.primary(context),
+            color: Colors.green.withOpacity(0.9),
           ),
           AddVerticleSpace(height: 10),
           Text(

@@ -38,14 +38,13 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        selectedIconTheme: IconThemeData(color: AppColors.primary(context)),
+        selectedIconTheme: IconThemeData(color: Colors.green.withOpacity(0.9)),
         unselectedIconTheme: IconThemeData(color: AppColors.secoundry(context)),
         backgroundColor: AppColors.background(context),
         selectedFontSize: 13,
         unselectedFontSize: 13,
         selectedLabelStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: AppColors.inversePrimery(context)),
+            fontWeight: FontWeight.bold, color: AppColors.primary(context)),
         unselectedLabelStyle:
             TextStyle(color: AppColors.inversePrimery(context)),
         items: const [
@@ -55,7 +54,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           ),
           BottomNavigationBarItem(
             label: "Updates",
-            icon: Icon(Icons.update_disabled_sharp),
+            icon: Icon(Icons.update_sharp),
           ),
           BottomNavigationBarItem(
             label: "Communities",

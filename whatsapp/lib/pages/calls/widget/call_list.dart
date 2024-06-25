@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/model/user_data.dart';
-import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/showing_dp.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
@@ -43,15 +42,15 @@ class CallList extends StatelessWidget {
                         ? Text(
                             user[index].name,
                             style: const TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               fontSize: 18,
-                              color: Colors.red,
+                              color: Color.fromARGB(255, 254, 21, 5),
                             ),
                           )
                         : Text(
                             user[index].name,
                             style: const TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               fontSize: 18,
                             ),
                           ),
@@ -71,7 +70,7 @@ class CallList extends StatelessWidget {
                                 child: Icon(
                                   Icons.arrow_forward,
                                   size: 20,
-                                  color: AppColors.primary(context),
+                                  color: Colors.green.withOpacity(0.9),
                                 ),
                               ),
                         const Text("14 June, "),

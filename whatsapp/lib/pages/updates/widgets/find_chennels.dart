@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/model/user_data.dart';
 import 'package:whatsapp/pages/updates/widgets/single_find_channels.dart';
-import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class Findchennels extends StatelessWidget {
@@ -28,11 +27,11 @@ class Findchennels extends StatelessWidget {
                   children: [
                     Text(
                       "See all  ",
-                      style: TextStyle(color: AppColors.primary(context)),
+                      style: TextStyle(color: Colors.green.withOpacity(0.9)),
                     ),
                     Icon(
                       Icons.keyboard_arrow_right,
-                      color: AppColors.primary(context),
+                      color: Colors.green.withOpacity(0.9),
                     ),
                   ],
                 ),

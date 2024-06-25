@@ -3,7 +3,7 @@ import 'package:whatsapp/model/user.dart';
 class UserData {
   final List<User> _user = [
     User(
-      name: "Shubham Hande",
+      name: "Suyesh Rathod",
       bio: "Jay Shree Ram",
       lastSeen: "online",
       dpPath: "assets/1.jpg",
@@ -17,7 +17,7 @@ class UserData {
     User(
       name: "Priya Sharma",
       bio: "Live and Let Live",
-      lastSeen: "2 days ago",
+      lastSeen: "11/9/24",
       dpPath: "assets/3.jpg",
     ),
     User(
@@ -29,38 +29,38 @@ class UserData {
     User(
       name: "Sneha Patel",
       bio: "Keep Smiling",
-      lastSeen: "5 hours ago",
+      lastSeen: "Online",
       dpPath: "assets/1.jpg",
     ),
     User(
       name: "Amit Roy",
       bio: "Stay Positive",
-      lastSeen: "3 days ago",
+      lastSeen: "15/9/24",
       dpPath: "assets/2.jpg",
     ),
     User(
       name: "Karan Verma",
       bio: "Work Hard, Play Hard",
-      lastSeen: "2 days ago",
-      dpPath: "assets/3.jpg",
+      lastSeen: "11/11/24",
+      dpPath: "assets/5.webp",
     ),
     User(
       name: "Neha Mehta",
       bio: "Love Life",
       lastSeen: "yesterday",
-      dpPath: "assets/4.jpg",
+      dpPath: "assets/6.webp",
     ),
     User(
       name: "Rahul Jain",
       bio: "Keep Moving Forward",
       lastSeen: "Yesterday",
-      dpPath: "assets/2.jpg",
+      dpPath: "assets/7.webp",
     ),
     User(
       name: "Anjali Yadav",
       bio: "Chase Your Dreams",
       lastSeen: "Just now",
-      dpPath: "assets/1.jpg",
+      dpPath: "assets/8.webp",
     ),
   ];
 

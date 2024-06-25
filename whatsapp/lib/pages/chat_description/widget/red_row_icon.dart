@@ -8,21 +8,24 @@ class RedRowIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        AddHorizontalSpace(width: 11),
-        Icon(
-          icon,
-          color: Color.fromARGB(255, 255, 0, 0),
-          size: 25,
-        ),
-        AddHorizontalSpace(width: 22),
-        Text(
-          text,
-          style: TextStyle(
-              color: const Color.fromARGB(255, 255, 0, 0), fontSize: 18),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        children: [
+          AddHorizontalSpace(width: 11),
+          Icon(
+            icon,
+            color: Color.fromARGB(255, 255, 0, 0),
+            size: 25,
+          ),
+          AddHorizontalSpace(width: 22),
+          Text(
+            text,
+            style: TextStyle(
+                color: const Color.fromARGB(255, 255, 0, 0), fontSize: 18),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
-import 'package:whatsapp/pages/single_dp_view_home.dart';
+import 'package:whatsapp/widgets/single_dp_view_home.dart';
 import 'package:whatsapp/themes/color.dart';
 
 class ShowingDp {
@@ -55,28 +55,28 @@ class ShowingDp {
                 onPressed: () {},
                 icon: Icon(
                   Icons.message,
-                  color: AppColors.primary(context),
+                  color: Colors.green.withOpacity(0.9),
                 ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.call,
-                  color: AppColors.primary(context),
+                  color: Colors.green.withOpacity(0.9),
                 ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.video_call_outlined,
-                  color: AppColors.primary(context),
+                  color: Colors.green.withOpacity(0.9),
                 ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.info,
-                  color: AppColors.primary(context),
+                  color: Colors.green.withOpacity(0.9),
                 ),
               ),
             ],
