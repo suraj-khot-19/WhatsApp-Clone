@@ -38,7 +38,7 @@ class ArchivedScreen extends StatelessWidget {
                 ),
               ),
             ),
-            ChatList(),
+            // ChatList(),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/pages/home/screens/setting_screen.dart';
 
 class MyAppBar extends StatelessWidget {
   final String title;
@@ -40,11 +41,13 @@ class MyAppBar extends StatelessWidget {
               ),
         PopupMenuButton(
           itemBuilder: (context) => [
-            const PopupMenuItem(
+            PopupMenuItem(
               child: Text("setting"),
-            ),
-            const PopupMenuItem(
-              child: Text("more"),
+              onTap: () => Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return SettingScreen();
+                },
+              )),
             ),
           ],
         )

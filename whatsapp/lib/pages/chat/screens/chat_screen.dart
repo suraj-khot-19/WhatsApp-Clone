@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:whatsapp/model/user.dart';
+import 'package:whatsapp/pages/chat/widgets/chats.dart';
 import 'package:whatsapp/pages/chat_description/screens/chat_description.dart';
-
 import 'package:whatsapp/themes/color.dart';
-import 'package:whatsapp/themes/theme_provider.dart';
 import 'package:whatsapp/pages/chat/widgets/message_container.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
@@ -70,19 +67,18 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: SizedBox(
-              child: CupertinoSwitch(
-                activeColor: Colors.cyan,
-                value: Provider.of<ThemeProvider>(context, listen: false)
-                    .isDarkTheme,
-                onChanged: (value) {
-                  Provider.of<ThemeProvider>(context, listen: false)
-                      .toggleTheme();
-                },
-              ),
+          /* SizedBox(
+            child: CupertinoSwitch(
+              activeColor: Colors.cyan,
+              value: Provider.of<ThemeProvider>(context, listen: false)
+                  .isDarkTheme,
+              onChanged: (value) {
+                Provider.of<ThemeProvider>(context, listen: false)
+                    .toggleTheme();
+              },
             ),
-          ),
+            ),*/
+          const Chats(),
           const MessageContainer(),
         ],
       ),

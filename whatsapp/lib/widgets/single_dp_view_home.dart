@@ -4,10 +4,18 @@ import 'package:whatsapp/themes/color.dart';
 
 class SingleDpViewHome extends StatelessWidget {
   final User user;
-  const SingleDpViewHome({super.key, required this.user});
+  final bool isStatus;
+  const SingleDpViewHome(
+      {super.key, required this.user, this.isStatus = false});
 
   @override
   Widget build(BuildContext context) {
+    //if is staus
+    Future.delayed(Duration(seconds: 2), () {
+      if (isStatus) {
+        Navigator.pop(context);
+      }
+    });
     return Scaffold(
       backgroundColor: AppColors.tertiary(context),
       appBar: AppBar(
