@@ -17,7 +17,10 @@ class StatusListHorizonntal extends StatelessWidget {
         return GestureDetector(
           onTap: () => Navigator.push(context, MaterialPageRoute(
             builder: (context) {
-              return SingleDpViewHome(user: user[index]);
+              return SingleDpViewHome(
+                user: user[index],
+                isStatus: true,
+              );
             },
           )),
           child: SizedBox(
@@ -28,8 +31,8 @@ class StatusListHorizonntal extends StatelessWidget {
                   ? Stack(
                       children: [
                         SizedBox(
-                          height: 60,
-                          width: 100,
+                          height: 65,
+                          width: 80,
                           child: CircleAvatar(
                             backgroundImage: AssetImage("assets/ram.jpeg"),
                           ),
@@ -63,7 +66,7 @@ class StatusListHorizonntal extends StatelessWidget {
                               width: 1.5, color: Colors.green.withOpacity(0.9)),
                           shape: BoxShape.circle),
                       padding: const EdgeInsets.all(2.5),
-                      height: 60,
+                      height: 65,
                       child: CircleAvatar(
                         backgroundImage: AssetImage(user[index].dpPath),
                       ),

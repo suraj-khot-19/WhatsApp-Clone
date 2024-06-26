@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/themes/color.dart';
@@ -44,7 +45,7 @@ class SingleFindChannels extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
-                    Icons.check_circle,
+                    CupertinoIcons.checkmark_seal,
                     color: Colors.green.withOpacity(0.9),
                   ),
                 ),

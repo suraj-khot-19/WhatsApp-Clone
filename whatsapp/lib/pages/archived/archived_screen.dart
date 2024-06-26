@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/pages/home/widgets/chat_list.dart';
+import 'package:whatsapp/model/user.dart';
+import 'package:whatsapp/model/user_data.dart';
 import 'package:whatsapp/themes/color.dart';
+import 'package:whatsapp/widgets/all_in_one_chat_list.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class ArchivedScreen extends StatelessWidget {
@@ -8,6 +10,7 @@ class ArchivedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<User> user = UserData().user;
     return Scaffold(
       appBar: AppBar(
         title: Text("Archived"),
@@ -38,7 +41,7 @@ class ArchivedScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // ChatList(),
+            AllInOneChatList(userList: user),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/pages/home/screens/on_click_chat_screen.dart';
 import 'package:whatsapp/pages/home/widgets/appbar_popup_button.dart';
 import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/pages/home/widgets/archived.dart';
@@ -157,7 +158,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green.withOpacity(0.9),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return OnClickChatScreen();
+            },
+          ));
+        },
         child: const Icon(
           Icons.chat,
           color: Colors.white,

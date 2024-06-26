@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whatsapp/pages/bottom_navigation_screen.dart';
+import 'package:whatsapp/auth/screens/welcome.dart';
 import 'package:whatsapp/themes/theme_provider.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'WhatsApp',
       theme: Provider.of<ThemeProvider>(context).themeData,
-      home: const BottomNavigationScreen(),
+      home: const Welcome(),
     );
   }
 }
