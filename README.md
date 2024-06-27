@@ -1,6 +1,22 @@
 <p>WhatsApp UI Clone</p>
 
-<p>Welcome Screens</p>
+<p>📱App Screens 📱</p>
+</br>
+<table>
+  <th>Dark Theme</th>
+  <th>Light Theme</th>
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_home_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_home_light.jpg" alt="img"></td>
+</tr>
+  
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_chat_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_chat_light.jpg" alt="img"></td>
+</tr>
+</table>
+  <br>
+<p>🤗 Welcome Screens 🤗</p>
 </br>
 <table>
 <tr>
