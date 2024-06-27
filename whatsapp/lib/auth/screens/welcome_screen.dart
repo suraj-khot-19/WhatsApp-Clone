@@ -31,52 +31,55 @@ class _WelcomeState extends State<Welcome> {
             ));
           }),
       backgroundColor: AppColors.background(context),
-      body: Center(
-        child: Column(
-          children: [
-            AddVerticleSpace(height: 100),
-            Container(
-              height: 180,
-              width: 300,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    "assets/back_withop.png",
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              AddVerticleSpace(height: 100),
+              Container(
+                height: 180,
+                width: 300,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/back_withop.png",
+                    ),
+                    fit: BoxFit.fitWidth,
+                    filterQuality: FilterQuality.low,
+                    opacity: 0.3,
                   ),
-                  fit: BoxFit.fitWidth,
-                  filterQuality: FilterQuality.low,
-                  opacity: 0.3,
                 ),
               ),
-            ),
-            Text(
-              "Welcome to WhatsApp",
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
-            ),
-            AddVerticleSpace(height: 15),
-            Text(
-              "choose your language to get started",
-              style:
-                  TextStyle(color: AppColors.secoundry(context), fontSize: 18),
-            ),
-            ListView.builder(
-              itemCount: list.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return WelcomeRadio(
-                  selected: selected,
-                  title: list[index].name,
-                  subtitile: list[index].nameInEnglish,
-                  onTap: (value) {
-                    setState(() {
-                      selected = value!;
-                    });
-                  },
-                  value: index,
-                );
-              },
-            )
-          ],
+              Text(
+                "Welcome to WhatsApp",
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+              ),
+              AddVerticleSpace(height: 15),
+              Text(
+                "choose your language to get started",
+                style: TextStyle(
+                    color: AppColors.secoundry(context), fontSize: 18),
+              ),
+              ListView.builder(
+                itemCount: list.length,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return WelcomeRadio(
+                    selected: selected,
+                    title: list[index].name,
+                    subtitile: list[index].nameInEnglish,
+                    onTap: (value) {
+                      setState(() {
+                        selected = value!;
+                      });
+                    },
+                    value: index,
+                  );
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
