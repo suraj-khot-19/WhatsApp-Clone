@@ -16,10 +16,16 @@ class ArchivedScreen extends StatelessWidget {
         title: Text("Archived"),
         actions: [
           PopupMenuButton(
+            color: AppColors.primary(context),
             itemBuilder: (context) {
               return [
                 PopupMenuItem(
-                  child: Text("more"),
+                  child: Text(
+                    "more",
+                    style: TextStyle(
+                      color: AppColors.tertiary(context),
+                    ),
+                  ),
                   onTap: () {},
                 )
               ];

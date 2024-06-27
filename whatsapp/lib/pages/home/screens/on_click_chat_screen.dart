@@ -28,9 +28,15 @@ class OnClickChatScreen extends StatelessWidget {
             ),
           ),
           PopupMenuButton(
+            color: AppColors.primary(context),
             itemBuilder: (context) => [
               PopupMenuItem(
-                child: Text("Setting"),
+                child: Text(
+                  "Setting",
+                  style: TextStyle(
+                    color: AppColors.tertiary(context),
+                  ),
+                ),
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {

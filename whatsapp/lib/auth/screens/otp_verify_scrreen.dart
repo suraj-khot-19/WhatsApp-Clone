@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/auth/screens/profile_info.dart';
+import 'package:whatsapp/auth/screens/profile_info_screen.dart';
 import 'package:whatsapp/auth/widgets/custom_button.dart';
 import 'package:whatsapp/auth/widgets/custom_textfeild.dart';
 import 'package:whatsapp/themes/color.dart';
@@ -47,6 +47,7 @@ class _OtpState extends State<Otp> {
         ),
         actions: [
           PopupMenuButton(
+            color: AppColors.primary(context),
             itemBuilder: (context) => [PopupMenuItem(child: Text("more"))],
           )
         ],
@@ -55,10 +56,43 @@ class _OtpState extends State<Otp> {
         child: Column(
           children: [
             AddVerticleSpace(height: 10),
-            Text("You've tried to regiser +91 ${widget.ph} recently."),
-            AddVerticleSpace(height: 4),
-            Text(
-                "Wait before requesting an SMS or a call with your\ncode. Wrong number?"),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: RichText(
+                textAlign: TextAlign.center,
+                strutStyle: StrutStyle(height: 1.5),
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "You've tried to regiser ",
+                      style: TextStyle(
+                        color: AppColors.primary(context),
+                      ),
+                    ),
+                    TextSpan(
+                      text: "+91 ${widget.ph} ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.primary(context),
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          "recently.\nWait before requesting an SMS or a call with your\ncode.",
+                      style: TextStyle(
+                        color: AppColors.primary(context),
+                      ),
+                    ),
+                    TextSpan(
+                      text: " Wrong number?",
+                      style: TextStyle(
+                        color: Colors.blue,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             AddVerticleSpace(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 80.0),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/auth/screens/phone_numberr.dart';
+import 'package:whatsapp/auth/screens/phone_number_screen.dart';
+import 'package:whatsapp/auth/widgets/background_image.dart';
 import 'package:whatsapp/auth/widgets/custom_button.dart';
 import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class AggreeContinue extends StatelessWidget {
-  const AggreeContinue({super.key});
+  final String selected;
+  const AggreeContinue({super.key, required this.selected});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,11 @@ class AggreeContinue extends StatelessWidget {
       backgroundColor: AppColors.background(context),
       body: Column(
         children: [
-          AddVerticleSpace(height: 150),
+          AddVerticleSpace(height: 80),
+          BackgroundImage(
+            height: 300,
+            width: 300,
+          ),
           Text(
             "Welcome to WhatsApp",
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
@@ -38,7 +44,7 @@ class AggreeContinue extends StatelessWidget {
                   ),
                   AddHorizontalSpace(width: 8),
                   Text(
-                    "English",
+                    selected,
                     style: TextStyle(color: Colors.green),
                   ),
                   AddHorizontalSpace(width: 8),

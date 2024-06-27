@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/themes/color.dart';
 
 class AuthMyAppBar extends StatelessWidget {
   final String title;
@@ -19,7 +20,16 @@ class AuthMyAppBar extends StatelessWidget {
       ),
       actions: [
         PopupMenuButton(
-          itemBuilder: (context) => [PopupMenuItem(child: Text("more"))],
+          color: AppColors.primary(context),
+          itemBuilder: (context) => [
+            PopupMenuItem(
+                child: Text(
+              "more",
+              style: TextStyle(
+                color: AppColors.tertiary(context),
+              ),
+            ))
+          ],
         )
       ],
     );

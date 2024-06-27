@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
+import 'package:whatsapp/themes/color.dart';
 import 'package:whatsapp/widgets/single_dp_view_home.dart';
 
 class ItemsWithStack extends StatelessWidget {
@@ -38,17 +39,42 @@ class ItemsWithStack extends StatelessWidget {
         Align(
           alignment: Alignment.topRight,
           child: PopupMenuButton(
+            color: AppColors.primary(context),
             itemBuilder: (context) {
               return [
                 PopupMenuItem(
-                  child: Text("Share"),
+                  child: Text(
+                    "Share",
+                    style: TextStyle(
+                      color: AppColors.tertiary(context),
+                    ),
+                  ),
                   onTap: () {},
                 ),
-                PopupMenuItem(child: Text("Edit"), onTap: () {}),
                 PopupMenuItem(
-                    child: Text("View in address book"), onTap: () {}),
+                    child: Text(
+                      "Edit",
+                      style: TextStyle(
+                        color: AppColors.tertiary(context),
+                      ),
+                    ),
+                    onTap: () {}),
                 PopupMenuItem(
-                    child: Text("Verify security code"), onTap: () {}),
+                    child: Text(
+                      "View in address book",
+                      style: TextStyle(
+                        color: AppColors.tertiary(context),
+                      ),
+                    ),
+                    onTap: () {}),
+                PopupMenuItem(
+                    child: Text(
+                      "Verify security code",
+                      style: TextStyle(
+                        color: AppColors.tertiary(context),
+                      ),
+                    ),
+                    onTap: () {}),
               ];
             },
           ),

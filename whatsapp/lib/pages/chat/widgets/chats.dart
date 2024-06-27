@@ -23,7 +23,7 @@ class Chats extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.green.withOpacity(0.3),
+                        color: Colors.green.withOpacity(0.8),
                       ),
                       child: Row(
                         children: [
@@ -76,7 +76,7 @@ class Chats extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color:
-                            AppColors.inversePrimery(context).withOpacity(0.1),
+                            AppColors.inversePrimery(context).withOpacity(0.5),
                       ),
                       child: Row(
                         children: [

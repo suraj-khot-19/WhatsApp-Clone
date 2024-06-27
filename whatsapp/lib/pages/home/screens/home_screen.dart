@@ -31,145 +31,170 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background(context),
+    return WillPopScope(
+      onWillPop: () async {
+        return await showExitConfirmationDialog(context);
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.background(context),
 
-      //app bar
-      appBar: !isSearch
-          ? AppBar(
-              automaticallyImplyLeading: false,
-              title: Text(
-                "WhatsApp",
-                style: TextStyle(
-                    color: Colors.green.withOpacity(0.9),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 23),
-              ),
-              actions: [
-                //qr
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.qr_code_scanner),
+        //app bar
+        appBar: !isSearch
+            ? AppBar(
+                automaticallyImplyLeading: false,
+                title: Text(
+                  "WhatsApp",
+                  style: TextStyle(
+                      color: Colors.green.withOpacity(0.9),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23),
                 ),
-                //photo
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.photo_camera_outlined),
-                ),
-                //more option
-                AppbarPopupButton(),
-              ],
-            )
-          : AppBar(
-              automaticallyImplyLeading: false,
-              title: Container(
-                // margin:
-                // const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: AppColors.tertiary(context),
-                ),
-                child: Row(
-                  children: [
-                    InkWell(
-                        onTap: () => setState(() {
-                              isSearch = false;
-                            }),
-                        child: Icon(
-                          Icons.arrow_back,
-                        )),
-                    Expanded(
-                      child: TextFormField(
-                        onChanged: (value) {
-                          checkController(value);
-                        },
-                        controller: _search,
-                        decoration: InputDecoration(
-                          hintText: "Search...",
-                          border:
-                              OutlineInputBorder(borderSide: BorderSide.none),
+                actions: [
+                  //qr
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.qr_code_scanner),
+                  ),
+                  //photo
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.photo_camera_outlined),
+                  ),
+                  //more option
+                  AppbarPopupButton(),
+                ],
+              )
+            : AppBar(
+                automaticallyImplyLeading: false,
+                title: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: AppColors.tertiary(context),
+                  ),
+                  child: Row(
+                    children: [
+                      InkWell(
+                          onTap: () => setState(() {
+                                isSearch = false;
+                              }),
+                          child: Icon(
+                            Icons.arrow_back,
+                          )),
+                      Expanded(
+                        child: TextFormField(
+                          onChanged: (value) {
+                            checkController(value);
+                          },
+                          controller: _search,
+                          decoration: InputDecoration(
+                            hintText: "Search...",
+                            border:
+                                OutlineInputBorder(borderSide: BorderSide.none),
+                          ),
                         ),
                       ),
-                    ),
-                    isSearchingg
-                        ? InkWell(
-                            onTap: () => setState(() {
-                              _search.clear();
-                              isSearchingg = false;
-                            }),
-                            child: Icon(
-                              Icons.clear_outlined,
-                            ),
-                          )
-                        : SizedBox(),
-                  ],
+                      isSearchingg
+                          ? InkWell(
+                              onTap: () => setState(() {
+                                _search.clear();
+                                isSearchingg = false;
+                              }),
+                              child: Icon(
+                                Icons.clear_outlined,
+                              ),
+                            )
+                          : SizedBox(),
+                    ],
+                  ),
                 ),
               ),
-            ),
 
-      //body
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            //search
-            !isSearch
-                ? GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isSearch = true;
-                      });
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 20),
-                      padding:
-                          const EdgeInsets.only(left: 23, top: 10, bottom: 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: AppColors.tertiary(context),
+        //body
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              //search
+              !isSearch
+                  ? GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isSearch = true;
+                        });
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.only(
+                            left: 23, top: 10, bottom: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: AppColors.tertiary(context),
+                        ),
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.search,
+                              size: 25,
+                            ),
+                            AddHorizontalSpace(width: 5),
+                            Text(
+                              "Search...",
+                            ),
+                          ],
+                        ),
                       ),
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.search,
-                            size: 25,
-                          ),
-                          AddHorizontalSpace(width: 5),
-                          Text(
-                            "Search...",
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                : SizedBox(),
+                    )
+                  : SizedBox(),
 
-            BelowSearchBar(),
-            Archived(),
-            AddVerticleSpace(height: 10),
-            ChatList(
-              seaching: _search.text.toString(),
-            ),
-          ],
+              BelowSearchBar(),
+              Archived(),
+              AddVerticleSpace(height: 10),
+              ChatList(
+                seaching: _search.text.toString(),
+              ),
+            ],
+          ),
         ),
-      ),
 
-      //floating action
+        //floating action
 
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.green.withOpacity(0.9),
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) {
-              return OnClickChatScreen();
-            },
-          ));
-        },
-        child: const Icon(
-          Icons.chat,
-          color: Colors.white,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.green.withOpacity(0.9),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return OnClickChatScreen();
+              },
+            ));
+          },
+          child: const Icon(
+            Icons.chat,
+            color: Colors.white,
+          ),
         ),
       ),
     );
+  }
+
+  //exit confirmation
+  Future<bool> showExitConfirmationDialog(BuildContext context) async {
+    return (await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('Exit App'),
+            content: Text('Do you really want to exit the app?'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: Text('No'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                child: Text('Yes'),
+              ),
+            ],
+          ),
+        )) ??
+        false;
   }
 }

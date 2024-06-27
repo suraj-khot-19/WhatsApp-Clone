@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whatsapp/auth/screens/welcome.dart';
+import 'package:whatsapp/auth/screens/welcome_screen.dart';
 import 'package:whatsapp/themes/theme_provider.dart';
 
 void main() {

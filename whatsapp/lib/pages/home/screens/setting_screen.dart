@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp/pages/chat_description/widget/chat_divider.dart';
 import 'package:whatsapp/pages/chat_description/widget/icon_name_row.dart';
 import 'package:whatsapp/pages/home/widgets/account_row.dart';
+import 'package:whatsapp/pages/home/widgets/theme_changer.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -25,7 +26,11 @@ class SettingScreen extends StatelessWidget {
               AccountRow(),
               AddVerticleSpace(height: 10),
               ChatDivider(),
-              AddVerticleSpace(height: 3),
+              AddVerticleSpace(height: 10),
+
+              ///theme changer
+              ThemeChanger(),
+              AddVerticleSpace(height: 10),
               IconNameRow(
                 title: "Account",
                 icon: Icons.account_box_outlined,

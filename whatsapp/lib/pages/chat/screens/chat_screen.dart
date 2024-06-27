@@ -65,22 +65,22 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          /* SizedBox(
-            child: CupertinoSwitch(
-              activeColor: Colors.cyan,
-              value: Provider.of<ThemeProvider>(context, listen: false)
-                  .isDarkTheme,
-              onChanged: (value) {
-                Provider.of<ThemeProvider>(context, listen: false)
-                    .toggleTheme();
-              },
-            ),
-            ),*/
-          const Chats(),
-          const MessageContainer(),
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/image.png"),
+              opacity: 0.1,
+              colorFilter: ColorFilter.mode(
+                  AppColors.tertiary(context).withOpacity(0.1),
+                  BlendMode.colorDodge),
+              fit: BoxFit.fitHeight),
+        ),
+        child: Column(
+          children: [
+            const Chats(),
+            const MessageContainer(),
+          ],
+        ),
       ),
     );
   }
