@@ -46,6 +46,41 @@
   <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_search_light.jpg" alt="img"></td>
 </tr>
 
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_profile_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_profile_light.jpg" alt="img"></td>
+</tr>
+
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_setting1_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_setting1_light.jpg" alt="img"></td>
+</tr>
+
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_setting2_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_setting2_light.jpg" alt="img"></td>
+</tr>
+
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_phone_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_phone_light.jpg" alt="img"></td>
+</tr>
+
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_community_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_community_light.jpg" alt="img"></td>
+</tr>
+
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_update1_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_update1_light.jpg" alt="img"></td>
+</tr>
+
+<tr>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_update2_dark.jpg" alt="img"></td>
+  <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_update2_light.jpg" alt="img"></td>
+</tr>
+
 </table>
 
 
