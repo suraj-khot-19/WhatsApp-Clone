@@ -63,7 +63,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),
-                      IconButton(onPressed: () {}, icon: const Icon(Icons.add))
+                      Icon(Icons.add)
                     ],
                   ),
                 ),

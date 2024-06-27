@@ -25,7 +25,6 @@
   <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_info1_light.jpg" alt="img"></td>
 </tr>
 
-
 <tr>
   <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_info2_dark.jpg" alt="img"></td>
   <td><img src="https://github.com/suraj-khot-19/img/blob/main/w_info2_light.jpg" alt="img"></td>
@@ -82,9 +81,6 @@
 </tr>
 
 </table>
-
-
-
 
   <br>
 <p>🤗 Welcome Screens 🤗</p>

@@ -58,39 +58,50 @@ class _OtpState extends State<Otp> {
             AddVerticleSpace(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: RichText(
-                textAlign: TextAlign.center,
-                strutStyle: StrutStyle(height: 1.5),
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "You've tried to regiser ",
-                      style: TextStyle(
-                        color: AppColors.primary(context),
+              child: Stack(
+                children: [
+                  RichText(
+                    textAlign: TextAlign.center,
+                    strutStyle: StrutStyle(height: 1.5),
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "You've tried to regiser ",
+                          style: TextStyle(
+                            color: AppColors.primary(context),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "+91 ${widget.ph} ",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primary(context),
+                          ),
+                        ),
+                        TextSpan(
+                          text:
+                              "recently.\nWait before requesting an SMS or a call with your\ncode.",
+                          style: TextStyle(
+                            color: AppColors.primary(context),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    bottom: -1,
+                    right: 33,
+                    child: InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: Text(
+                        " Wrong number?",
+                        style: TextStyle(
+                          color: Colors.blue,
+                        ),
                       ),
                     ),
-                    TextSpan(
-                      text: "+91 ${widget.ph} ",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.primary(context),
-                      ),
-                    ),
-                    TextSpan(
-                      text:
-                          "recently.\nWait before requesting an SMS or a call with your\ncode.",
-                      style: TextStyle(
-                        color: AppColors.primary(context),
-                      ),
-                    ),
-                    TextSpan(
-                      text: " Wrong number?",
-                      style: TextStyle(
-                        color: Colors.blue,
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
             AddVerticleSpace(height: 20),

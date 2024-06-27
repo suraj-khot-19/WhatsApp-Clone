@@ -1,17 +1,21 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/pages/chat/screens/chat_screen.dart';
 import 'package:whatsapp/themes/color.dart';
+import 'package:whatsapp/widgets/follow_button.dart';
 import 'package:whatsapp/widgets/showing_dp.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
 class AllInOneChatList extends StatelessWidget {
   final List<User> userList;
   final bool isContacts;
+  final bool isChennal;
   const AllInOneChatList({
     super.key,
     required this.userList,
     this.isContacts = false,
+    this.isChennal = false,
   });
 
   @override
@@ -53,12 +57,26 @@ class AllInOneChatList extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          user.name,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 18),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                        Row(
+                          children: [
+                            Text(
+                              user.name,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 18),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            isChennal
+                                ? AddHorizontalSpace(width: 3)
+                                : SizedBox(),
+                            isChennal
+                                ? Icon(
+                                    CupertinoIcons.checkmark_seal_fill,
+                                    color: Colors.green,
+                                    size: 15,
+                                  )
+                                : SizedBox()
+                          ],
                         ),
                         const AddVerticleSpace(height: 3),
                         Row(
@@ -117,7 +135,9 @@ class AllInOneChatList extends StatelessWidget {
                             )
                           ],
                         )
-                      : SizedBox(),
+                      : isChennal
+                          ? FollowButton()
+                          : SizedBox(),
                 ],
               ),
             ),

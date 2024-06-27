@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/model/user.dart';
 import 'package:whatsapp/model/user_data.dart';
+import 'package:whatsapp/pages/updates/screen/channels_screen.dart';
 import 'package:whatsapp/pages/updates/widgets/single_find_channels.dart';
 import 'package:whatsapp/widgets/spacer.dart';
 
@@ -22,7 +23,13 @@ class Findchennels extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return ChannelsScreen();
+                    },
+                  ));
+                },
                 child: Row(
                   children: [
                     Text(
