@@ -1,4 +1,6 @@
-<p>WhatsApp UI Clone</p>
+<p>
+  WhatsApp UI Clone
+</p>
 
 <p>📱App Screens 📱</p>
 </br>
